@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "config": {
-        "publicPathFlag": "--publicPath=/account/"
+        "publicPathFlag": "--publicPath=/"
     },
     "scripts": {
         "start": "proton-pack dev-server $npm_package_config_publicPathFlag --appMode=standalone",
