@@ -4,7 +4,7 @@
     "description": "React web application to manage Proton accounts",
     "main": "index.js",
     "config": {
-        "publicPathFlag": "--publicPath=/"
+        "publicPathFlag": "--publicPath=/account/"
     },
     "scripts": {
         "start": "proton-pack dev-server $npm_package_config_publicPathFlag --appMode=standalone",
