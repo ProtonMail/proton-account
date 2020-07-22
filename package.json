@@ -3,9 +3,6 @@
     "version": "4.0.0",
     "description": "React web application to manage Proton accounts",
     "main": "index.js",
-    "config": {
-        "publicPathFlag": "--publicPath=/account/"
-    },
     "scripts": {
         "start": "proton-pack dev-server $npm_package_config_publicPathFlag --appMode=standalone",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
