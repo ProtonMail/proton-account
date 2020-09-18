@@ -20,8 +20,7 @@
         "build:sso": "cross-env NODE_ENV=production proton-pack compile --appMode=sso",
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "bundle": "proton-bundler",
-        "check-types": "tsc",
-        "postinstall": "proton-i18n post-install"
+        "check-types": "tsc"
     },
     "repository": {
         "type": "git",
@@ -58,6 +57,7 @@
         "papaparse": "^5.0.0",
         "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
         "proton-shared": "github:ProtonMail/proton-shared#master",
+        "proton-translations": "github:ProtonMail/proton-translations#fe-account",
         "react-components": "github:ProtonMail/react-components#master",
         "ttag": "^1.7.22",
         "yetch": "^1.1.0"
