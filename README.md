@@ -1,6 +1,4 @@
-[![CircleCI](https://circleci.com/gh/ProtonMail/proton-account.svg?style=svg)](https://circleci.com/gh/ProtonMail/proton-account)
-
-# protonmail-account
+# proton-account
 
 Proton Account built with React.
 
