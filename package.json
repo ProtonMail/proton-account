@@ -4,7 +4,7 @@
     "description": "React web application to manage Proton accounts",
     "main": "index.js",
     "scripts": {
-        "start": "proton-pack dev-server $npm_package_config_publicPathFlag --appMode=standalone",
+        "start": "proton-pack dev-server --appMode=standalone",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "preversion": "git update-index --no-assume-unchanged package-lock.json",
@@ -16,7 +16,7 @@
         "deploy": "proton-bundler --git",
         "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
         "deploy:standalone": "proton-bundler --git --appMode=standalone",
-        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+        "build": "cross-env NODE_ENV=production proton-pack compile",
         "build:sso": "cross-env NODE_ENV=production proton-pack compile --appMode=sso",
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "bundle": "proton-bundler",
