@@ -1,4 +1,4 @@
-# [4.0.0-beta.10] - 2021-02-25
+# [4.0.0-beta.10] - 2021-03-01
 
 ## Improvements
 - Moved storage display to the sidebar
