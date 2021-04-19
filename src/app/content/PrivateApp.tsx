@@ -13,6 +13,12 @@ import {
     MembersModel,
     SubscriptionModel,
     PaymentMethodsModel,
+    ImportersModel,
+    ImportHistoriesModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
+    ContactsModel,
+    ContactEmailsModel,
 } from 'proton-shared/lib/models';
 
 const EVENT_MODELS = [
@@ -27,11 +33,17 @@ const EVENT_MODELS = [
     OrganizationModel,
     MembersModel,
     PaymentMethodsModel,
+    ImportersModel,
+    ImportHistoriesModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
+    ContactsModel,
+    ContactEmailsModel,
 ];
 
-const PRELOAD_MODELS = [UserSettingsModel, UserModel];
+const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];
 
-const getAppContainer = () => import('./MainContainer');
+const getAppContainer = () => import('./SetupMainContainer');
 
 interface Props {
     onLogout: () => void;
