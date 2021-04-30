@@ -1,5 +1,14 @@
 import React from 'react';
-import { SettingsPropsShared, CalendarsSection, CalendarImportSection } from 'react-components';
+import {
+    SettingsPropsShared,
+    CalendarsSection,
+    CalendarImportSection,
+    CalendarShareSection,
+    Card,
+    ButtonLike,
+    SettingsLink,
+    SettingsSection,
+} from 'react-components';
 import { c } from 'ttag';
 
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
@@ -19,6 +28,10 @@ const generalSettingsConfig = {
         {
             text: c('Title').t`Import`,
             id: 'import',
+        },
+        {
+            text: c('Title').t`Share outside Proton`,
+            id: 'share',
         },
     ],
 };
@@ -52,6 +65,23 @@ const CalendarCalendarsSettings = ({
                 user={user}
             />
             <CalendarImportSection activeCalendars={activeCalendars} defaultCalendar={defaultCalendar} user={user} />
+            {user.isFree ? (
+                <SettingsSection>
+                    <Card className="mb1">
+                        <div className="flex flex-nowrap flex-align-items-center">
+                            <p className="flex-item-fluid mt0 mb0 pr2">
+                                {c('Upgrade notice')
+                                    .t`Upgrade to a paid plan to share your calendar with anyone with a link.`}
+                            </p>
+                            <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
+                                {c('Action').t`Upgrade`}
+                            </ButtonLike>
+                        </div>
+                    </Card>
+                </SettingsSection>
+            ) : (
+                <CalendarShareSection calendars={calendars} defaultCalendar={defaultCalendar} user={user}/>
+            )}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
