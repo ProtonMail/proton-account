@@ -1,24 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import {
-    LoaderPage,
-    useApi,
-    StandardLoadErrorPage,
-    useErrorHandler,
-    useAppLink,
-    useAuthentication,
-    useModals,
+    AuthenticatedBugModal,
     DropdownMenuButton,
     Icon,
-    AuthenticatedBugModal,
+    LoaderPage,
+    StandardLoadErrorPage,
+    useApi,
+    useAppLink,
+    useAuthentication,
+    useErrorHandler,
+    useModals,
+    useTheme,
 } from 'react-components';
+import { ThemeTypes } from 'proton-shared/lib/themes/themes';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from 'proton-shared/lib/keys';
 import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS, APP_NAMES } from 'proton-shared/lib/constants';
+import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
 import { getValidatedApp } from 'proton-shared/lib/authentication/sessionForkValidation';
 
 import { getToAppName } from '../public/helper';
@@ -54,6 +56,7 @@ const SetupInternalAccountContainer = () => {
     const goToApp = useAppLink();
     const toAppRef = useRef<APP_NAMES | null>(null);
     const authentication = useAuthentication();
+    const [, setTheme] = useTheme();
 
     const generateInternalAddressRef = useRef<InternalAddressGeneration | undefined>(undefined);
 
@@ -84,6 +87,9 @@ const SetupInternalAccountContainer = () => {
             if (!getHasOnlyExternalAddresses(addresses)) {
                 return handleBack();
             }
+
+            // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
+            setTheme(ThemeTypes.Default);
 
             toAppRef.current = app;
             generateInternalAddressRef.current = {
