@@ -15,7 +15,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import {
     LinkButton,
     Loader,
-    LoaderIcon,
+    CircleLoader,
     OnLoginCallbackArguments,
     useApi,
     useErrorHandler,
@@ -135,7 +135,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                     onClick={() => handleClickSession(LocalID)}
                 >
                     <span className="user-initials rounded p0-25 mb0-5 inline-flex bg-primary">
-                        <span className="dropdown-logout-text center text-semibold" aria-hidden="true">
+                        <span className="dropdown-logout-text mauto text-semibold" aria-hidden="true">
                             {initials}
                         </span>
                     </span>
@@ -149,7 +149,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                             </div>
                         </div>
                         <div className="ml1 block no-tiny-mobile no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
-                            {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Sign in`}
+                            {loadingMap[LocalID] ? <CircleLoader /> : c('Action').t`Sign in`}
                         </div>
                     </div>
                 </button>
