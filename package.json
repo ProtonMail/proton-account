@@ -1,6 +1,6 @@
 {
     "name": "proton-account",
-    "version": "4.2.17",
+    "version": "4.2.18",
     "description": "React web application to manage Proton accounts",
     "main": "index.js",
     "scripts": {
