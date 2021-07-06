@@ -1,4 +1,4 @@
-## Release: 4.0.1 — June 30, 2021
+## Release: 4.0.1 — July 6, 2021
 
 ### Improvements
 - General user interface and accessibility improvements
